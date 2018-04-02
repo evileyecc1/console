@@ -114,7 +114,7 @@ class Characters extends Command
             Assets::withChain([new Location($token), new Names($token)])->dispatch($token);
 
             // Bookmarks
-            Bookmarks::withChain([new Folders($token)])->dispatch($token);
+//            Bookmarks::withChain([new Folders($token)])->dispatch($token);
 
             // Calendar
             Events::withChain([new Detail($token), new Attendees($token)])->dispatch($token);

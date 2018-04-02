@@ -104,7 +104,7 @@ class Corporations extends Command
 
             Assets::withChain([new Locations($token), new Names($token)])->dispatch($token);
 
-            Bookmarks::withChain([new Folders($token)])->dispatch($token);
+//            Bookmarks::withChain([new Folders($token)])->dispatch($token);
 
             Contacts::dispatch($token);
 
