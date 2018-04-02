@@ -53,14 +53,6 @@ class ConsoleServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 UpdateSde::class,
-                Diagnose::class,
-                Reset::class,
-                Email::class,
-                Generate::class,
-                Clear::class,
-                ClearExpired::class,
-                Status::class,
-                Version::class,
 
                 // Dev
                 EsiJobMakeCommand::class,

@@ -28,7 +28,6 @@ use Exception;
 use File;
 use Illuminate\Console\Command;
 use Predis\Client;
-use Seat\Eveapi\Api\Server\ServerStatus;
 
 /**
  * Class Diagnose.
@@ -90,9 +89,6 @@ class Diagnose extends Command
         $this->line('');
 
         $this->check_redis();
-        $this->line('');
-
-        $this->check_pheal();
         $this->line('');
 
         $this->call('seat:version');
@@ -234,28 +230,4 @@ class Diagnose extends Command
         }
     }
 
-    /**
-     * Check if access to the EVE API OK.
-     */
-    public function check_pheal()
-    {
-
-        $this->line(' * Checking Pheal EVE API Access');
-
-        try {
-
-            $status = (new ServerStatus)->setScope('server')
-                ->getPheal()
-                ->ServerStatus();
-
-            $this->info('Server Online: ' . $status->serverOpen);
-            $this->info('Online Players: ' . $status->onlinePlayers);
-
-        } catch (Exception $e) {
-
-            $this->error('Unable to call the EVE API: ' . $e->getMessage());
-
-        }
-
-    }
 }

@@ -53,8 +53,6 @@ use Seat\Eveapi\Jobs\Corporation\Standings;
 use Seat\Eveapi\Jobs\Corporation\StarbaseDetails;
 use Seat\Eveapi\Jobs\Corporation\Starbases;
 use Seat\Eveapi\Jobs\Corporation\Structures;
-use Seat\Eveapi\Jobs\Corporation\TitleMembers;
-use Seat\Eveapi\Jobs\Corporation\Titles;
 use Seat\Eveapi\Jobs\Industry\Corporation\Jobs;
 use Seat\Eveapi\Jobs\Industry\Corporation\Mining\Extractions;
 use Seat\Eveapi\Jobs\Industry\Corporation\Mining\ObserverDetails;
@@ -130,7 +128,6 @@ class Corporations extends Command
             Standings::dispatch($token);
             Starbases::withChain([new StarbaseDetails($token)])->dispatch($token);
             Structures::dispatch($token);
-            Titles::withChain([new TitleMembers($token)])->dispatch($token);
 
             Jobs::dispatch($token);
             Extractions::dispatch($token);
