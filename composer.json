@@ -24,15 +24,5 @@
         "evileyecc1/eveapi": "dev-master",
         "evileyecc1/services": "dev-master",
         "guzzlehttp/guzzle": "^6.2"
-    },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/evileyecc1/eveapi.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/evileyecc1/services.git"
-        }
-    ]
+    }
 }
