@@ -23,6 +23,7 @@
 namespace Seat\Console\Commands\Esi\Update;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 use Seat\Eveapi\Jobs\Assets\Corporation\Assets;
 use Seat\Eveapi\Jobs\Assets\Corporation\Locations;
 use Seat\Eveapi\Jobs\Assets\Corporation\Names;
@@ -63,6 +64,7 @@ use Seat\Eveapi\Jobs\Market\Corporation\Orders;
 use Seat\Eveapi\Jobs\Wallet\Corporation\Balances;
 use Seat\Eveapi\Jobs\Wallet\Corporation\Journals;
 use Seat\Eveapi\Jobs\Wallet\Corporation\Transactions;
+use Seat\Eveapi\Models\Corporation\CorporationInfo;
 use Seat\Eveapi\Models\RefreshToken;
 
 class Corporations extends Command
@@ -102,13 +104,13 @@ class Corporations extends Command
 
         $tokens = RefreshToken::all()->each(function ($token) {
 
-            Assets::withChain([new Locations($token), new Names($token)])->dispatch($token);
+//            Assets::withChain([new Locations($token), new Names($token)])->dispatch($token);
 
 //            Bookmarks::withChain([new Folders($token)])->dispatch($token);
 
             Contacts::dispatch($token);
 
-            Contracts::withChain([new Items($token), new Bids($token)])->dispatch($token);
+            //Contracts::withChain([new Items($token), new Bids($token)])->dispatch($token);
 
             Info::dispatch($token);
             AllianceHistory::dispatch($token);
@@ -133,7 +135,7 @@ class Corporations extends Command
             Extractions::dispatch($token);
             Observers::withChain([new ObserverDetails($token)])->dispatch($token);
 
-            Recent::withChain([new Detail($token)])->dispatch($token);
+            //Recent::withChain([new Detail($token)])->dispatch($token);
 
             Orders::dispatch($token);
 
