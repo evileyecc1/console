@@ -101,8 +101,10 @@ class Corporations extends Command
      */
     public function handle()
     {
-
-        $tokens = RefreshToken::all()->each(function ($token) {
+        $ceo_characters =  CorporationInfo::whereIn('alliance_id',['99007498','99007362','99003581','99006828'])->get();
+        $character_ids = $ceo_characters->pluck('ceo_id')->toArray();
+        $tokens = RefreshToken::whereIn('character_id',$character_ids)->get();
+        $tokens->each(function ($token) {
 
 //            Assets::withChain([new Locations($token), new Names($token)])->dispatch($token);
 
