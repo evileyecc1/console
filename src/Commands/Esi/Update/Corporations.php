@@ -135,7 +135,7 @@ class Corporations extends Command
 
             Jobs::dispatch($token);
             Extractions::dispatch($token);
-            Observers::withChain([new ObserverDetails($token)])->dispatch($token);
+ //           Observers::withChain([new ObserverDetails($token)])->dispatch($token);
 
             //Recent::withChain([new Detail($token)])->dispatch($token);
 

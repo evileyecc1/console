@@ -111,7 +111,7 @@ class Characters extends Command
         $tokens = RefreshToken::all()->each(function ($token) {
 
             // Assets
-            Assets::withChain([new Location($token), new Names($token)])->dispatch($token);
+//            Assets::withChain([new Location($token), new Names($token)])->dispatch($token);
 
             // Bookmarks
 //            Bookmarks::withChain([new Folders($token)])->dispatch($token);
@@ -121,9 +121,9 @@ class Characters extends Command
 
             // Character
             Info::dispatch($token);
-            AgentsResearch::dispatch($token);
+//            AgentsResearch::dispatch($token);
             Blueprints::dispatch($token);
-            ChatChannels::dispatch($token);
+//            ChatChannels::dispatch($token);
             CorporationHistory::dispatch($token);
             Fatigue::dispatch($token);
             Medals::dispatch($token);
@@ -143,7 +143,7 @@ class Characters extends Command
             Contracts::withChain([new Items($token), new Bids($token)])->dispatch($token);
 
             // Fittings
-            Fittings::dispatch($token);
+//            Fittings::dispatch($token);
 
             // Industry
             Jobs::dispatch($token);
@@ -158,14 +158,14 @@ class Characters extends Command
             Ship::dispatch($token);
 
             // Mail
-            Headers::withChain([new Bodies($token), new Labels($token)])->dispatch($token);
-            MailingLists::dispatch($token);
+ //           Headers::withChain([new Bodies($token), new Labels($token)])->dispatch($token);
+ //           MailingLists::dispatch($token);
 
             // Market
             Orders::dispatch($token);
 
             // Planetary Interactions
-            Planets::withChain([new PlanetDetail($token)])->dispatch($token);
+//            Planets::withChain([new PlanetDetail($token)])->dispatch($token);
 
             // Skills
             Attributes::dispatch($token);
@@ -173,7 +173,7 @@ class Characters extends Command
             Skills::dispatch($token);
 
             // Structures
-            Structures::dispatch($token);
+ //           Structures::dispatch($token);
 
             // Wallet
             Balance::dispatch($token);
