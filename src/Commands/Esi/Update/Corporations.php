@@ -116,21 +116,21 @@ class Corporations extends Command
 
             Info::dispatch($token);
             AllianceHistory::dispatch($token);
-            Blueprints::dispatch($token);
-            ContainerLogs::dispatch($token);
+//            Blueprints::dispatch($token);
+//            ContainerLogs::dispatch($token);
             Divisions::dispatch($token);
             Facilities::dispatch($token);
-            IssuedMedals::dispatch($token);
-            Medals::dispatch($token);
+ //           IssuedMedals::dispatch($token);
+ //           Medals::dispatch($token);
             Members::dispatch($token);
             MembersLimit::dispatch($token);
             MembersTitles::dispatch($token);
             MemberTracking::dispatch($token);
-            Outposts::withChain([new OutpostDetails($token)])->dispatch($token);
+  //          Outposts::withChain([new OutpostDetails($token)])->dispatch($token);
             Roles::withChain([new RoleHistories($token)])->dispatch($token);
             Shareholders::dispatch($token);
             Standings::dispatch($token);
-            Starbases::withChain([new StarbaseDetails($token)])->dispatch($token);
+//            Starbases::withChain([new StarbaseDetails($token)])->dispatch($token);
             Structures::dispatch($token);
 
             Jobs::dispatch($token);
